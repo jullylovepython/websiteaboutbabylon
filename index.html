@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Slide Website</title>
+
+    <!-- ฟอนต์ Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif;
+            background: #f5f5f0; /* สีเบจอ่อน */
+            color: #2e2e2e;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 25px 0 20px 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A); /* สีเขียวธรรมชาติ */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 3px solid #8BC34A;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .slide-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 100%;
+            max-height: 650px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+
+        /* ปุ่ม Scroll */
+        .scroll-btn {
+            position: fixed;
+            right: 25px;
+            background: linear-gradient(135deg, #388E3C, #689F38); /* เขียวเข้ม/เขียวอ่อน */
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+            transition: transform 0.25s, box-shadow 0.3s, background 0.3s;
+            z-index: 1000;
+        }
+
+        .scroll-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+            background: linear-gradient(135deg, #2E7D32, #558B2F);
+        }
+
+        #scrollUp {
+            bottom: 90px;
+        }
+
+        #scrollDown {
+            bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HANGING GARDENS OF BABYLON สวนลอยบาบิโลน</h1>
+
+    <div class="slide-container">
+        <img class="slide" src="images/1.jpg" alt="Slide 1">
+        <img class="slide" src="images/2.jpg" alt="Slide 2">
+        <img class="slide" src="images/3.jpg" alt="Slide 3">
+        <img class="slide" src="images/4.jpg" alt="Slide 4">
+        <img class="slide" src="images/5.jpg" alt="Slide 5">
+        <img class="slide" src="images/6.jpg" alt="Slide 6">
+        <img class="slide" src="images/7.jpg" alt="Slide 7">
+        <img class="slide" src="images/8.jpg" alt="Slide 8">
+        <img class="slide" src="images/9.jpg" alt="Slide 9">
+        <img class="slide" src="images/10.jpg" alt="Slide 10">
+    </div>
+
+    <!-- ปุ่ม Scroll -->
+    <button class="scroll-btn" id="scrollUp">&#9650;</button>
+    <button class="scroll-btn" id="scrollDown">&#9660;</button>
+
+    <script>
+        const scrollUp = document.getElementById('scrollUp');
+        const scrollDown = document.getElementById('scrollDown');
+
+        scrollUp.addEventListener('click', () => {
+            window.scrollBy({
+                top: -window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        scrollDown.addEventListener('click', () => {
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
